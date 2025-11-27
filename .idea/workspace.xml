@@ -4,7 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0bfedc9e-63ea-4bfa-b07e-5fa3703e3dd7" name="Changes" comment="" />
+    <list default="true" id="0bfedc9e-63ea-4bfa-b07e-5fa3703e3dd7" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/philosophizer/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/philosophizer/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/philosophizer/Configuration/MailConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/philosophizer/Configuration/MailConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/philosophizer/Configuration/MailProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/philosophizer/Configuration/MailProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/philosophizer/data/Audience.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/philosophizer/data/Audience.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/philosophizer/data/Philosophy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/philosophizer/data/Philosophy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/philosophizer/service/PhilosophizerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/philosophizer/service/PhilosophizerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/philosophizer/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/philosophizer/AppTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,7 +33,9 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/jk082/Philosophizer/Philosophizer"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />

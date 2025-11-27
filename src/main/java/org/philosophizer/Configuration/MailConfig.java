@@ -1,5 +1,6 @@
 package org.philosophizer.Configuration;
 
+import jakarta.mail.Authenticator;
 import jakarta.mail.PasswordAuthentication;
 import jakarta.mail.Session;
 
@@ -9,10 +10,10 @@ import org.springframework.context.annotation.Configuration;
 import java.util.Properties;
 
 @Configuration
-public class MainConfig {
+public class MailConfig {
     private final MailProperties props;
 
-    public MainConfig(MailProperties props){
+    public MailConfig(MailProperties props){
         this.props = props;
     }
 
@@ -24,16 +25,17 @@ public class MainConfig {
         p.put("mail.smtp.host", props.getHost());
         p.put("mail.smtp.port", props.getPort());
 
-        return Session.getInstance(p, new javax.mail.Authenticator() {
+        return Session.getInstance(p, new Authenticator() {
             @Override
-            protected javax.mail.PasswordAuthentication getPasswordAuthentication() {
-                return new javax.mail.PasswordAuthentication(
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(
                         props.getUsername(),
                         props.getPassword()
                 );
             }
         });
-            }
-        }
+
     }
-}
+        }
+
+
