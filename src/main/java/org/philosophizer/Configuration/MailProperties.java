@@ -1,9 +1,9 @@
-package org.philosophizer.Configuration;
+package org.philosophizer.configuration;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Configuration;
 
-@Configuration
+
+
 @ConfigurationProperties(prefix = "mail.smtp")
 public class MailProperties {
     private String host;
@@ -12,6 +12,7 @@ public class MailProperties {
     private String password;
     private boolean auth;
     private boolean starttlsEnable;
+    private String from;
 
     public MailProperties(String host, int port, String username, String password, boolean auth, boolean starttlsEnable) {
         this.host = host;
@@ -69,5 +70,13 @@ public class MailProperties {
 
     public void setStarttlsEnable(boolean starttlsEnable) {
         this.starttlsEnable = starttlsEnable;
+    }
+
+    public String getFrom() {
+        return from;
+    }
+
+    public void setFrom(String from) {
+        this.from = from;
     }
 }

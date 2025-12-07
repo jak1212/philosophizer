@@ -3,6 +3,8 @@ package org.philosophizer.service;
 import org.apache.cxf.common.util.StringUtils;
 import org.philosophizer.data.Audience;
 import org.philosophizer.data.Philosophy;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.io.BufferedReader;
@@ -17,16 +19,20 @@ import java.util.concurrent.ThreadLocalRandom;
 public class PhilosophizerService {
 
     public List<Philosophy> philosophiesList;
+    private MailService mailService;
+    private Logger log = LoggerFactory.getLogger(PhilosophizerService.class);
 
-    public String sendPhilosophy(List<Audience> audienceList){
+    public void sendPhilosophy(List<Audience> audienceList){
         this.philosophiesList = buildPhilosophiesList();
-        Random r = new Random();
-        int index = ThreadLocalRandom.current().nextInt(philosophiesList.size());
-
-
-
-
-
+        int index = ThreadLocalRandom.current().nextInt(philosophiesList.size() - 1);
+        String subject = "Daily Philosophy";
+        for(Audience a : audienceList){
+            String to = a.getEmail();
+            mailService.sendEmail(to,
+                    philosophiesList.get(index).getQuote() + "/n" +
+                    philosophiesList.get(index).getSaidBy(), subject);
+        }
+        log.info("Philosophizer service sent a batch");
     }
 
     public List<Philosophy> buildPhilosophiesList(){
@@ -37,7 +43,7 @@ public class PhilosophizerService {
             String line;
 
             while((line = br.readLine()) != null) {
-                String[] parts = line.split("|");
+                String[] parts = line.split("\\|");
                 if(parts.length < 2){ continue;}
 
                 String quote = parts[0].replace("\"", "").trim();

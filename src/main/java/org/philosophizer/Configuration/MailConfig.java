@@ -1,4 +1,4 @@
-package org.philosophizer.Configuration;
+package org.philosophizer.configuration;
 
 import jakarta.mail.Authenticator;
 import jakarta.mail.PasswordAuthentication;
