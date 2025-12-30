@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Philosophizer Sign Up Form</title>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <link rel="stylesheet" th:href="@{/css/philosophizer.css}">
+    <style>
+        .error-message {
+            color: red;
+            font-size: 0.9em;
+            margin-top: 2px;
+        }
+    </style>
+</head>
+<body class = "zen-background">
+<div class = "card">
+<h1>Philosophizer Sign Up Form</h1>
+<form id="signupForm" novalidate>
+
+
+
+    <!-- First Name -->
+    <label for="firstName">First Name:</label><br>
+    <input type="text" id="firstName" name="firstName" required
+           pattern="[A-Za-z\s]{2,50}"
+           title="Name should only contain letters and spaces (2–50 characters)">
+    <div id="firstNameError" class="error-message"></div>
+    <br><br>
+
+    <!-- Last Name -->
+    <label for="lastName">Last Name:</label><br>
+    <input type="text" id="lastName" name="lastName" required
+           pattern="[A-Za-z\s]{2,50}"
+           title="Name should only contain letters and spaces (2–50 characters)">
+    <div id="lastNameError" class="error-message"></div>
+    <br><br>
+
+
+    <!-- Email Address -->
+    <label for="userEmail">Email Address:</label><br>
+    <input type="text" id="userEmail" name="userEmail" required>
+    <div id="userEmailError" class="error-message"></div>
+    <br><br>
+
+    <div class="g-recaptcha" th:attr="data-sitekey=${siteKey}"></div>
+    <div th:if="${errorMessage}">
+        <p class="alert alert-danger" th:text="${errorMessage}"></p>
+    </div>
+
+    <script th:if="${errorMessage}">
+    if (typeof grecaptcha !== 'undefined') {
+        grecaptcha.reset();
+    }
+</script>
+
+
+    <button type="submit">Submit</button>
+</form>
+</div>
+
+<script>
+document.getElementById('signupForm').addEventListener('submit', async function (event) {
+    event.preventDefault(); // 🚨 ALWAYS FIRST
+
+    const button = event.target.querySelector('button');
+button.disabled = true;
+
+
+    let valid = true;
+    document.querySelectorAll('.error-message').forEach(el => el.textContent = '');
+
+    const firstName = document.getElementById('firstName').value.trim();
+    const lastName = document.getElementById('lastName').value.trim();
+    const email = document.getElementById('userEmail').value.trim();
+
+    const nameRegex = /^[A-Za-z\s]{2,50}$/;
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+    if (!nameRegex.test(firstName)) {
+        document.getElementById('firstNameError').textContent = 'Name must be 2–50 letters only.';
+        valid = false;
+        button.disabled = false;
+    }
+
+    if (!nameRegex.test(lastName)) {
+        document.getElementById('lastNameError').textContent = 'Name must be 2–50 letters only.';
+        valid = false;
+        button.disabled = false;
+    }
+
+    if (!emailRegex.test(email)) {
+        document.getElementById('userEmailError').textContent = 'Enter a valid email.';
+        valid = false;
+        button.disabled = false;
+    }
+
+    if (!valid) return; // ❌ NO API CALL
+
+    // ✅ Call API explicitly
+    try {
+    const response = await fetch('/api/audience', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ firstName, lastName, email })
+    });
+
+    if (response.ok) {
+        window.location.href = '/philosophizer/signup/thank-you';
+    } else {
+        document.getElementById('userEmailError').textContent =
+            'Submission failed. Please try again later.';
+button.disabled = false;
+
+    }
+} catch (err) {
+    document.getElementById('userEmailError').textContent =
+        'Network error. Please try again.';
+        button.disabled = false;
+}
+
+});
+</script>
+
+
+
+</body>
+</html>

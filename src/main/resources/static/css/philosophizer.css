@@ -1,0 +1,82 @@
+/* ---------- Base Reset ---------- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ---------- Background ---------- */
+body.zen-background {
+    min-height: 100vh;
+    background: linear-gradient(
+        180deg,
+        #f6f7f4 0%,
+        #eef1ec 40%,
+        #e6ebe4 100%
+    );
+    font-family: "Georgia", "Times New Roman", serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2f3a2f;
+}
+
+/* ---------- Card ---------- */
+.card {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 3rem 3.5rem;
+    border-radius: 16px;
+    max-width: 460px;
+    text-align: center;
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(6px);
+}
+
+/* ---------- Typography ---------- */
+h1 {
+    font-size: 2rem;
+    font-weight: normal;
+    margin-bottom: 1.2rem;
+    letter-spacing: 0.02em;
+}
+
+.soft-text {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    color: #3a463a;
+}
+
+.small-text {
+    font-size: 0.85rem;
+    color: #6a756a;
+}
+
+/* ---------- Divider ---------- */
+.divider {
+    width: 60px;
+    height: 1px;
+    margin: 1.5rem auto;
+    background: linear-gradient(
+        to right,
+        transparent,
+        #b7c2b3,
+        transparent
+    );
+}
+
+/* ---------- Optional Subtle Motion ---------- */
+@keyframes drift {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(-6px);
+    }
+}
+
+.card {
+    animation: drift 6s ease-in-out infinite alternate;
+}

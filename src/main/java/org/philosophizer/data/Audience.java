@@ -1,14 +1,31 @@
 package org.philosophizer.data;
 
+
+
+import jakarta.persistence.*;
+
+
+@Entity
+@Table(name = "audience")
 public class Audience {
-    public String firstName;
-    public String lastName;
-    public String email;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Long id;
+    @Column(name = "first_name", nullable = false, length = 50)
+    private String firstName;
+    @Column(name = "last_name", nullable = false, length = 50)
+    private String lastName;
+    @Column(name = "email", nullable = false, unique = true, length = 50)
+    private String email;
+    @Column(name = "active", nullable = false)
+    private boolean isActive;
 
     public Audience(String firstName, String lastName, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
+        this.isActive = true;
     }
 
     public Audience(){}
@@ -36,4 +53,28 @@ public class Audience {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public boolean isActive() {
+        return isActive;
+    }
+
+    public void setActive(boolean active) {
+        isActive = active;
+    }
+
+    @PrePersist
+    public void prePersist() {
+        if (!isActive) {
+            isActive = true;
+        }
+    }
+
 }

@@ -3,8 +3,12 @@ package org.philosophizer.service;
 import org.apache.cxf.common.util.StringUtils;
 import org.philosophizer.data.Audience;
 import org.philosophizer.data.Philosophy;
+import org.philosophizer.repositories.AudienceRepository;
+import org.philosophizer.repositories.PhilosophyRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
 import java.io.BufferedReader;
@@ -18,8 +22,16 @@ import java.util.concurrent.ThreadLocalRandom;
 @Service
 public class PhilosophizerService {
 
-    public List<Philosophy> philosophiesList;
+
+    @Autowired
+    @Lazy
     private MailService mailService;
+    @Autowired
+    private PhilosophyRepository philosophyRepository;
+    @Autowired
+    private AudienceRepository audienceRepository;
+
+    public List<Philosophy> philosophiesList;
     private Logger log = LoggerFactory.getLogger(PhilosophizerService.class);
 
     public void sendPhilosophy(List<Audience> audienceList){
@@ -31,29 +43,22 @@ public class PhilosophizerService {
             mailService.sendEmail(to,
                     philosophiesList.get(index).getQuote() + "/n" +
                     philosophiesList.get(index).getSaidBy(), subject);
+            log.info("Philosophizer service mail sent to recipient={}", a.getEmail());
         }
         log.info("Philosophizer service sent a batch");
     }
 
     public List<Philosophy> buildPhilosophiesList(){
-        List<Philosophy> philosophiesList = new ArrayList<>();
-        String filePath = "src\\main\\resources\\philosophies.csv";
-
-        try(BufferedReader br = new BufferedReader(new FileReader(filePath))){
-            String line;
-
-            while((line = br.readLine()) != null) {
-                String[] parts = line.split("\\|");
-                if(parts.length < 2){ continue;}
-
-                String quote = parts[0].replace("\"", "").trim();
-                String saidBy = StringUtils.capitalize(parts[1].trim());
-
-                philosophiesList.add(new Philosophy(quote, saidBy));
-            }
-
-        }catch(IOException e){e.printStackTrace();}
+        List<Philosophy> philosophiesList = philosophyRepository.findAll();
 
         return philosophiesList;
+    }
+
+    public void executeMailService(){
+        List<Audience> audienceList = audienceRepository.findByIsActiveTrue();
+
+        sendPhilosophy(audienceList);
+
+
     }
 }

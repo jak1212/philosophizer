@@ -14,6 +14,7 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 public class PhilosophizerApp
 {
     private static Logger log = LoggerFactory.getLogger(PhilosophizerApp.class);
+    
 
     public static void main( String[] args )
     {

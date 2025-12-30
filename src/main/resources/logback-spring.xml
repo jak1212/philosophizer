@@ -1,27 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
 
-    <!-- Console Appender -->
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
-        <encoder>
-            <pattern>
-                %d{yyyy-MM-dd HH:mm:ss} %-5level [%thread] %logger - %msg%n
-            </pattern>
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+
+            <!-- Explicit charset -->
+            <charset>UTF-8</charset>
+
+            <!-- Always include MDC (for requestId, etc.) -->
+            <includeMdc>true</includeMdc>
+
+            <!-- Add stable fields -->
+            <customFields>
+                {
+                "service":"philosophizer",
+                "env":"${SPRING_PROFILES_ACTIVE:-local}"
+                }
+            </customFields>
+
         </encoder>
     </appender>
 
-    <!-- Root Logger -->
     <root level="INFO">
         <appender-ref ref="CONSOLE"/>
     </root>
-    <!-- Log all incoming HTTP requests -->
+
     <logger name="org.springframework.web" level="INFO"/>
-
-    <!-- Log request mappings -->
     <logger name="org.springframework.web.servlet.DispatcherServlet" level="INFO"/>
-
-    <!-- Log request lifecycle -->
     <logger name="org.springframework.web.filter.CommonsRequestLoggingFilter" level="INFO"/>
-
 
 </configuration>

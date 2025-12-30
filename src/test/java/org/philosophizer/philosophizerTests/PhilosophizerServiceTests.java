@@ -20,9 +20,6 @@ public class PhilosophizerServiceTests {
     @Autowired
     public PhilosophizerService philosophizerService;
 
-//    public PhilosophizerServiceTests(PhilosophizerService philosophizerService){
-//        this.philosophizerService = philosophizerService;
-//    }
 
     @Test
     public void getPhilosophies(){

@@ -9,7 +9,7 @@ public class LoggingUtility {
         CommonsRequestLoggingFilter filter = new CommonsRequestLoggingFilter();
         filter.setIncludeClientInfo(true);
         filter.setIncludeQueryString(true);
-        filter.setIncludePayload(true);
+        filter.setIncludePayload(false);
         filter.setMaxPayloadLength(10000);
         filter.setAfterMessagePrefix("HTTP REQUEST: ");
         return filter;
