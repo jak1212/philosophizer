@@ -35,17 +35,21 @@ public class PhilosophizerService {
     private Logger log = LoggerFactory.getLogger(PhilosophizerService.class);
 
     public void sendPhilosophy(List<Audience> audienceList){
-        this.philosophiesList = buildPhilosophiesList();
-        int index = ThreadLocalRandom.current().nextInt(philosophiesList.size() - 1);
-        String subject = "Daily Philosophy";
-        for(Audience a : audienceList){
-            String to = a.getEmail();
-            mailService.sendEmail(to,
-                    philosophiesList.get(index).getQuote() + "/n" +
-                    philosophiesList.get(index).getSaidBy(), subject);
-            log.info("Philosophizer service mail sent to recipient={}", a.getEmail());
+        try {
+            this.philosophiesList = buildPhilosophiesList();
+            int index = ThreadLocalRandom.current().nextInt(philosophiesList.size() - 1);
+            String subject = "Daily Philosophy";
+            for (Audience a : audienceList) {
+                String to = a.getEmail();
+                mailService.sendEmail(a,
+                        philosophiesList.get(index).getQuote() + "/n" +
+                                philosophiesList.get(index).getSaidBy(), subject);
+                log.info("Philosophizer service mail sent to recipient={}", a.getEmail());
+            }
+            log.info("Philosophizer service sent a batch");
+        }catch(Exception e){
+            log.error("Exception in sending philosophy exception={}", e.toString());
         }
-        log.info("Philosophizer service sent a batch");
     }
 
     public List<Philosophy> buildPhilosophiesList(){
@@ -60,5 +64,13 @@ public class PhilosophizerService {
         sendPhilosophy(audienceList);
 
 
+    }
+
+    public List<Philosophy> getPhilosophiesList() {
+        return philosophiesList;
+    }
+
+    public void setPhilosophiesList(List<Philosophy> philosophiesList) {
+        this.philosophiesList = philosophiesList;
     }
 }

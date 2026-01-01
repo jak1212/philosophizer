@@ -5,35 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0bfedc9e-63ea-4bfa-b07e-5fa3703e3dd7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.github/workflows/uat-deploy.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Monitoring/prometheus.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/philosophizer/Configuration/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/philosophizer/Configuration/RequestIdFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/philosophizer/controllers/AudienceController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/philosophizer/controllers/SignupController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/philosophizer/repositories/AudienceRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/philosophizer/repositories/PhilosophyRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/philosophizer/service/AudienceService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application-prod.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application-uat.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/data.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/philosophizer.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/signup.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/thank-you.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/philosophizer/Configuration/MailConfigMetrics.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/philosophizer/Configuration/SafetyChecks.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/philosophizer/utilities/MailSender.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/philosophizer/utilities/SesMailSender.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/philosophizer/utilities/SmtpMailhogSender.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/philosophizer/PhilosophizerApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/philosophizer/PhilosophizerApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/philosophizer/data/Audience.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/philosophizer/data/Audience.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/philosophizer/data/Philosophy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/philosophizer/data/Philosophy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/philosophizer/service/MailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/philosophizer/service/MailService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/philosophizer/service/PhilosophizerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/philosophizer/service/PhilosophizerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/philosophizer/utilities/LoggingUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/philosophizer/utilities/LoggingUtility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application-local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application-prod.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-prod.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application-uat.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-uat.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/logback-spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/logback-spring.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/philosophizer/mailTests/MailTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/philosophizer/mailTests/MailTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/philosophizer/philosophizerTests/PhilosophizerServiceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/philosophizer/philosophizerTests/PhilosophizerServiceTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,9 +28,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="HTML File" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -76,8 +61,11 @@
       <recent name="C:\Users\jk082\Philosophizer\Philosophizer\src\main\resources\placeholder" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.PhilosophizerApp">
+  <component name="RunManager" selected="JUnit.PhilosophizerServiceTests">
     <configuration name="PhilosophizerApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <envs>
+        <env name="SPRING_PROFILES_ACTIVE" value="local" />
+      </envs>
       <option name="MAIN_CLASS_NAME" value="org.philosophizer.PhilosophizerApp" />
       <module name="philosophizer" />
       <extension name="coverage">
@@ -152,13 +140,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.PhilosophizerApp" />
+      <item itemvalue="JUnit.MailTest" />
+      <item itemvalue="JUnit.MailTest.sendTestEmail" />
+      <item itemvalue="JUnit.PhilosophizerServiceTests" />
+      <item itemvalue="JUnit.PhilosophizerServiceTests.getPhilosophies" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.PhilosophizerApp" />
         <item itemvalue="JUnit.PhilosophizerServiceTests" />
+        <item itemvalue="JUnit.MailTest" />
+        <item itemvalue="Application.PhilosophizerApp" />
         <item itemvalue="JUnit.MailTest.sendTestEmail" />
         <item itemvalue="JUnit.PhilosophizerServiceTests.getPhilosophies" />
-        <item itemvalue="JUnit.MailTest" />
       </list>
     </recent_temporary>
   </component>
