@@ -1,0 +1,42 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: philosophizer-daily-email
+spec:
+  schedule: "0 7 * * *" # 8am daily
+  concurrencyPolicy: Forbid
+  successfulJobsHistoryLimit: 3
+  failedJobsHistoryLimit: 3
+  jobTemplate:
+    spec:
+      backoffLimit: 1
+      template:
+        spec:
+          restartPolicy: Never
+          containers:
+            - name: philosophizer-job
+              image: 733232591650.dkr.ecr.us-east-1.amazonaws.com/philosophizer:1.0.3
+              env:
+                - name: SPRING_PROFILES_ACTIVE
+                  value: "prod,job"
+                - name: APP_MODE
+                  value: "job"
+
+                # SMTP / SES
+                - name: SMTP_HOST
+                  valueFrom:
+                    secretKeyRef:
+                      name: smtp-secrets
+                      key: host
+
+                - name: SMTP_USERNAME
+                  valueFrom:
+                    secretKeyRef:
+                      name: smtp-secrets
+                      key: username
+
+                - name: SMTP_PASSWORD
+                  valueFrom:
+                    secretKeyRef:
+                      name: smtp-secrets
+                      key: password

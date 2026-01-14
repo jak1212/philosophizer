@@ -23,7 +23,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest(classes = PhilosophizerApp.class)
-//@ActiveProfiles("local")
+@ActiveProfiles("local")
 public class MailTest {
 
     @Autowired

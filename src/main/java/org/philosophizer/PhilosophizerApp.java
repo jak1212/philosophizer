@@ -7,13 +7,15 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 
 @SpringBootApplication(scanBasePackages = "org.philosophizer")
+@EnableScheduling
 @ConfigurationPropertiesScan
 public class PhilosophizerApp
 {
-    private static Logger log = LoggerFactory.getLogger(PhilosophizerApp.class);
+    private static final Logger log = LoggerFactory.getLogger(PhilosophizerApp.class);
     
 
     public static void main( String[] args )

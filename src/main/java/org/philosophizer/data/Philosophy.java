@@ -2,7 +2,6 @@ package org.philosophizer.data;
 
 
 import jakarta.persistence.*;
-import org.springframework.boot.autoconfigure.web.WebProperties;
 
 @Entity
 @Table(name = "philosophy")
