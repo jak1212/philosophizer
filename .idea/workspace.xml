@@ -61,7 +61,7 @@
       <recent name="C:\Users\jk082\Philosophizer\Philosophizer\src\main\resources\placeholder" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PhilosophizerServiceTests">
+  <component name="RunManager" selected="Application.PhilosophizerApp">
     <configuration name="PhilosophizerApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <envs>
         <env name="SPRING_PROFILES_ACTIVE" value="local" />
@@ -149,10 +149,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.PhilosophizerApp" />
         <item itemvalue="JUnit.PhilosophizerServiceTests" />
         <item itemvalue="JUnit.MailTest" />
         <item itemvalue="JUnit.MailTest.sendTestEmail" />
-        <item itemvalue="Application.PhilosophizerApp" />
         <item itemvalue="JUnit.PhilosophizerServiceTests.getPhilosophies" />
       </list>
     </recent_temporary>
