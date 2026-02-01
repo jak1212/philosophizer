@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: philosophizer
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: philosophizer
@@ -13,7 +13,8 @@ spec:
         app: philosophizer
     spec:
       containers:
-        - name: app
-          image: 733232591650.dkr.ecr.us-east-1.amazonaws.com/philosophizer/uat:latest
+        - name: philosophizer
+          image: philosophizer:latest   # placeholder
           ports:
             - containerPort: 8080
+          imagePullPolicy: IfNotPresent

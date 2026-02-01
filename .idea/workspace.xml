@@ -5,20 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0bfedc9e-63ea-4bfa-b07e-5fa3703e3dd7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/K8s/CronJob.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/K8s/Service.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/K8s/deployment.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/philosophizer/Configuration/JobExecutionGuard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/philosophizer/cronJobs/DailyMailJobRunner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application-job.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/K8s/base/kustomization.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/K8s/overlays/local/deployment-env.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/K8s/overlays/local/kustomization.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/K8s/overlays/prod/kustomization.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/K8s/overlays/uat/kustomization.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/philosophizer/PhilosophizerApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/philosophizer/PhilosophizerApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/philosophizer/data/Philosophy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/philosophizer/data/Philosophy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/philosophizer/service/MailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/philosophizer/service/MailService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/K8s/CronJob.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/K8s/base/CronJob.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/K8s/Service.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/K8s/base/Service.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/K8s/deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/K8s/base/deployment.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application-local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-local.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application-prod.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-prod.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/philosophizer/mailTests/MailTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/philosophizer/mailTests/MailTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +54,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jk082\Philosophizer\Philosophizer\K8s\base" />
       <recent name="C:\Users\jk082\Philosophizer\Philosophizer\src\main\resources\static\css" />
       <recent name="C:\Users\jk082\Philosophizer\Philosophizer\src\main\resources\static" />
       <recent name="C:\Users\jk082\Philosophizer\Philosophizer\src\main\resources\templates" />

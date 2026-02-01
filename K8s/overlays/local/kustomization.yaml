@@ -1,0 +1,13 @@
+resources:
+  - ../../base
+
+patches:
+  - path: deployment-env.yaml
+    target:
+      kind: Deployment
+      name: philosophizer
+
+images:
+  - name: philosophizer
+    newName: philosophizer
+    newTag: latest
