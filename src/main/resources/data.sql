@@ -19,5 +19,6 @@ INSERT INTO philosophy (quote, said_by) VALUES
 ('Even while they teach, men learn', 'Seneca Younger'),
 ('Aha! #20 its not what happens to you in life, its what you do with it that counts', 'Barbara Burke'),
 ('To exist is to change, to change is to mature, to mature is to go on creating oneself endlessly', 'Henri Bergson'),
-('The opposite of love is not hate, its indifference. The opposite of art is not ugliness, its indifference. The opposite of faith is not heresy, its indifference. The opposite of life is not death, its indifference', 'Elie Wiesel');
+('The opposite of love is not hate, its indifference. The opposite of art is not ugliness, its indifference. The opposite of faith is not heresy, its indifference. The opposite of life is not death, its indifference', 'Elie Wiesel'),
+('To doubt everything or to believe everything are two equally convenient solutions; both dispense of the necessity of reflection', 'Jules Henri Poincare');
 
