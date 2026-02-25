@@ -4,28 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0bfedc9e-63ea-4bfa-b07e-5fa3703e3dd7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/K8s/monitoring/grafana/grafana-deployment.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/K8s/monitoring/grafana/grafana-pvc.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/K8s/monitoring/grafana/grafana-service.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/K8s/monitoring/loki/loki-configmap.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/K8s/monitoring/loki/loki-deployment.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/K8s/monitoring/loki/loki-pvc.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/K8s/monitoring/loki/loki-service.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/K8s/monitoring/monitoring-namespace.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/K8s/monitoring/prometheus/prometheus-config.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/K8s/monitoring/prometheus/prometheus-deployment.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/K8s/monitoring/prometheus/prometheus-pvc.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/K8s/monitoring/prometheus/prometheus-service.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/K8s/monitoring/prometheus/rbac-prometheus.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/K8s/monitoring/promtail/promtail-configmap.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/K8s/monitoring/promtail/promtail-daemonset.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/K8s/monitoring/promtail/rbac-promtail.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Monitoring/prometheus.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data.sql" afterDir="false" />
-    </list>
+    <list default="true" id="0bfedc9e-63ea-4bfa-b07e-5fa3703e3dd7" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
