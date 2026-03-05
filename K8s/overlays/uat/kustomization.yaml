@@ -1,7 +1,17 @@
 resources:
   - ../../base
 
+patches:
+  - path: deployment-env.yaml
+    target:
+      kind: Deployment
+      name: philosophizer
+  - path: cronjob-env.yaml
+    target:
+      kind: CronJob
+      name: philosophizer-daily-email
+
 images:
   - name: philosophizer
-    newName: 733232591650.dkr.ecr.us-east-1.amazonaws.com/philosophizer/uat
+    newName: 733232591650.dkr.ecr.us-east-1.amazonaws.com/philosophizer
     newTag: latest
