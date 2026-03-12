@@ -13,5 +13,5 @@ patches:
 
 images:
   - name: philosophizer
-    newName: 733232591650.dkr.ecr.us-east-1.amazonaws.com/philosophizer
+    newName: 733232591650.dkr.ecr.us-east-1.amazonaws.com/philosophizer/uat
     newTag: latest
