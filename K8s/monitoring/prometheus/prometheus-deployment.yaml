@@ -14,6 +14,13 @@ spec:
         app: prometheus
     spec:
       serviceAccountName: prometheus
+      initContainers:
+        - name: fix-permissions
+          image: busybox
+          command: [ 'sh', '-c', 'mkdir -p /prometheus/data && chmod -R 777 /prometheus' ]
+          volumeMounts:
+            - name: prometheus-storage
+              mountPath: /prometheus
       containers:
         - name: prometheus
           image: prom/prometheus:latest
