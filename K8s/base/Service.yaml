@@ -3,9 +3,17 @@ kind: Service
 metadata:
   name: philosophizer-internal
 spec:
+  type: LoadBalancer  # 👈 This creates an AWS ELB
   selector:
     app: philosophizer
   ports:
-    - port: 8080
-      targetPort: 8080
-  type: ClusterIP
+    - protocol: TCP
+      port: 80          # External port
+      targetPort: 8080  # Your app's port
+#  selector:
+#    app: philosophizer
+#  ports:
+#    - port: 8080
+#      targetPort: 8080
+#  type: ClusterIP
+
