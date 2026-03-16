@@ -17,4 +17,4 @@ spec:
           image: philosophizer:latest   # placeholder
           ports:
             - containerPort: 8080
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
