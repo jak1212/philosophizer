@@ -1,4 +1,4 @@
-# ---------- Build Stage ----------
+# ---------- Build Stage ---------
 FROM eclipse-temurin:18-alpine AS build
 WORKDIR /app
 
