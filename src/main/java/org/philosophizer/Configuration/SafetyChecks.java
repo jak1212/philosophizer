@@ -17,6 +17,7 @@ public class SafetyChecks {
 
     private final MailConfigMetrics mailConfigMetrics;
     private final Logger log = LoggerFactory.getLogger(SafetyChecks.class);
+
     @Autowired
     private Environment env;
 
@@ -26,12 +27,12 @@ public class SafetyChecks {
 
     @PostConstruct
     void validateAll() {
-        checkProfiles(env);
-        checkEnvLabel(env);
-        checkHibernateDDL(env);
-        mailConfigCheck(env);
-        requireExplicitSendFlag(env);
-        schedulerGuard(env);
+        checkProfiles();
+        checkEnvLabel();
+        checkHibernateDDL();
+        mailConfigCheck();
+        requireExplicitSendFlag();
+        schedulerGuard();
         checkMetrics();
         logRuntimeContext();
     }
