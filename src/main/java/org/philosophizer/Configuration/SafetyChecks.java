@@ -57,8 +57,8 @@ public class SafetyChecks {
     void checkEnvLabel() {
         String appEnv = env.getProperty("app.env");
         String active = env.getActiveProfiles()[0];
-        System.out.println("App env " + appEnv);
-        System.out.println("active profile " + active);
+        log.info("app env: " + appEnv);
+        log.info("active profiles " + active);
 
         if (!active.equals(appEnv)) {
             throw new IllegalStateException(
