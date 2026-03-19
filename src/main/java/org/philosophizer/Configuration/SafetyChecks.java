@@ -3,6 +3,7 @@ package org.philosophizer.configuration;
 import jakarta.annotation.PostConstruct;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
 import org.springframework.core.env.Environment;
 import org.springframework.core.env.Profiles;
@@ -16,13 +17,15 @@ public class SafetyChecks {
 
     private final MailConfigMetrics mailConfigMetrics;
     private final Logger log = LoggerFactory.getLogger(SafetyChecks.class);
+    @Autowired
+    private Environment env;
 
     public SafetyChecks(MailConfigMetrics mailConfigMetrics){
         this.mailConfigMetrics = mailConfigMetrics;
     }
 
     @PostConstruct
-    void validateAll(Environment env) {
+    void validateAll() {
         checkProfiles(env);
         checkEnvLabel(env);
         checkHibernateDDL(env);
@@ -33,7 +36,7 @@ public class SafetyChecks {
         logRuntimeContext();
     }
 
-    void validate(Environment env) {
+    void validate() {
         if (env.acceptsProfiles(Profiles.of("prod")) &&
                 System.getenv("SMTP_HOST").contains("localhost")) {
             throw new IllegalStateException("Mailhog in prod");
@@ -41,7 +44,7 @@ public class SafetyChecks {
     }
 
 
-    void checkProfiles(Environment env) {
+    void checkProfiles() {
         if (env.getActiveProfiles().length != 1) {
             throw new IllegalStateException(
                     "Exactly one Spring profile must be active, found: " +
@@ -50,7 +53,7 @@ public class SafetyChecks {
     }
 
 
-    void checkEnvLabel(Environment env) {
+    void checkEnvLabel() {
         String appEnv = env.getProperty("app.env");
         String active = env.getActiveProfiles()[0];
 
@@ -61,7 +64,7 @@ public class SafetyChecks {
     }
 
 
-    void checkHibernateDDL(Environment env) {
+    void checkHibernateDDL() {
         if (env.acceptsProfiles(Profiles.of("prod"))) {
             String ddl = env.getProperty("spring.jpa.hibernate.ddl-auto");
             if (!"none".equals(ddl) && !"validate".equals(ddl)) {
@@ -72,7 +75,7 @@ public class SafetyChecks {
     }
 
 
-    void mailConfigCheck(Environment env) {
+    void mailConfigCheck() {
         String host = env.getProperty("mail.smtp.host", "");
 
         if (env.acceptsProfiles(Profiles.of("prod")) && host.contains("localhost")) {
@@ -84,7 +87,7 @@ public class SafetyChecks {
         }
     }
 
-    void requireExplicitSendFlag(Environment env) {
+    void requireExplicitSendFlag() {
         boolean enabled = env.getProperty("mail.send.enabled", Boolean.class, false);
 
         if (env.acceptsProfiles(Profiles.of("prod")) && !enabled) {
@@ -93,7 +96,7 @@ public class SafetyChecks {
     }
 
 
-    void schedulerGuard(Environment env) {
+    void schedulerGuard() {
         boolean enabled = env.getProperty("jobs.daily-email.enabled",
                 Boolean.class, false);
 
