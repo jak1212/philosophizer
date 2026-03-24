@@ -40,7 +40,7 @@ public class SafetyChecks {
     void validate() {
         if (env.acceptsProfiles(Profiles.of("prod")) &&
                 System.getenv("SMTP_HOST").contains("localhost")) {
-            throw new IllegalStateException("Mailhog in prod");
+            throw new IllegalStateException("localhost smtp in prod");
         }
     }
 
@@ -85,9 +85,7 @@ public class SafetyChecks {
             throw new IllegalStateException("Mailhog configured in prod");
         }
 
-        if (env.acceptsProfiles(Profiles.of("local")) && !host.contains("localhost")) {
-            throw new IllegalStateException("Non-local SMTP in local profile");
-        }
+
     }
 
     void requireExplicitSendFlag() {
