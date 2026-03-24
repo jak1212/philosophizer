@@ -18,3 +18,19 @@ spec:
           ports:
             - containerPort: 8080
           imagePullPolicy: Always
+          env:
+            - name: SMTP_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: philosophizer-secrets
+                  key: SMTP_USERNAME
+            - name: SMTP_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: philosophizer-secrets
+                  key: SMTP_PASSWORD
+            - name: MAIL_JOB_ENABLED
+              valueFrom:
+                secretKeyRef:
+                  name: philosophizer-secrets
+                  key: MAIL_JOB_ENABLED
