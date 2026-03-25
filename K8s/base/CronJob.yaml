@@ -16,10 +16,10 @@ spec:
           restartPolicy: Never
           containers:
             - name: philosophizer-job
-              image: 733232591650.dkr.ecr.us-east-1.amazonaws.com/philosophizer:1.0.3
+              image: 733232591650.dkr.ecr.us-east-1.amazonaws.com/philosophizer/uat:latest
               env:
                 - name: SPRING_PROFILES_ACTIVE
-                  value: "prod,job"
+                  value: "uat,job"
                 - name: APP_MODE
                   value: "job"
 
@@ -27,17 +27,17 @@ spec:
                 - name: SMTP_HOST
                   valueFrom:
                     secretKeyRef:
-                      name: smtp-secrets
+                      name: philosophizer-secrets
                       key: host
 
                 - name: SMTP_USERNAME
                   valueFrom:
                     secretKeyRef:
-                      name: smtp-secrets
+                      name: philosophizer-secrets
                       key: username
 
                 - name: SMTP_PASSWORD
                   valueFrom:
                     secretKeyRef:
-                      name: smtp-secrets
+                      name: philosophizer-secrets
                       key: password
