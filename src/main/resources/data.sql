@@ -1,5 +1,6 @@
 INSERT INTO audience (id, first_name, last_name, email, active)
-VALUES (NEXT VALUE FOR audience_seq, 'Jack', 'Kelly', 'jk0827@gmail.com', true);
+VALUES (NEXT VALUE FOR audience_seq, 'Jack', 'Kelly', 'jk0827@gmail.com', true),
+(NEXT VALUE FOR audience_seq, 'Ellie', 'Kelly', 'ellie.baldwin.kelly@gmail.com', true);
 INSERT INTO philosophy (id, quote, said_by) VALUES
 (NEXT VALUE FOR philosophy_seq, 'No act of kindness however small, is ever wasted', 'Aesop'),
 (NEXT VALUE FOR philosophy_seq, 'Man spends his life in reasoning on the past, in complaining of the present, in fearing the future', 'Antoine de Rivarol'),

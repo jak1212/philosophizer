@@ -46,7 +46,9 @@ public class SafetyChecks {
 
 
     void checkProfiles() {
-        if (env.getActiveProfiles().length != 1) {
+
+
+        if ( env.getActiveProfiles().length != 1) {
             throw new IllegalStateException(
                     "Exactly one Spring profile must be active, found: " +
                             Arrays.toString(env.getActiveProfiles()));

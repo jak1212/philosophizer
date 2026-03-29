@@ -19,9 +19,11 @@ spec:
               image: 733232591650.dkr.ecr.us-east-1.amazonaws.com/philosophizer/uat:latest
               env:
                 - name: SPRING_PROFILES_ACTIVE
-                  value: "uat,job"
+                  value: "job"
                 - name: APP_MODE
                   value: "job"
+                - name: APP_ENV
+                  value: "uat"
 
                 # SMTP / SES
                 - name: SMTP_HOST
