@@ -1,32 +1,32 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: monitoring-ingress
+  name: observability-ingress
   namespace: monitoring
   annotations:
-    kubernetes.io/ingress.class: nginx
-    # Optional: enable rewrite if you want / to be forwarded cleanly
     nginx.ingress.kubernetes.io/rewrite-target: /$1
+    nginx.ingress.kubernetes.io/use-regex: "true"  # optional if you add regex paths later
 spec:
+  ingressClassName: nginx
   rules:
-    - host: monitoring.uat.example.com  # Change to monitoring.prod.example.com in prod
+    - host: monitoring.uat.example.com  # swap for PROD as needed
       http:
         paths:
-          - path: /(.*)       # Base path redirects to Grafana
+          - path: /           # base URL goes to Grafana
             pathType: Prefix
             backend:
               service:
                 name: grafana
                 port:
                   number: 3000
-          - path: /prometheus(/|$)(.*)
+          - path: /prometheus
             pathType: Prefix
             backend:
               service:
                 name: prometheus
                 port:
                   number: 9090
-          - path: /loki(/|$)(.*)
+          - path: /loki
             pathType: Prefix
             backend:
               service:
