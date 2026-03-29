@@ -3,12 +3,42 @@ kind: CronJob
 metadata:
   name: philosophizer-daily-email
 spec:
+  schedule: "0 7 * * *"
+  concurrencyPolicy: Forbid
   jobTemplate:
     spec:
+      backoffLimit: 0
+      activeDeadlineSeconds: 300
       template:
         spec:
+          restartPolicy: OnFailure
           containers:
             - name: philosophizer-job
+              image: 733232591650.dkr.ecr.us-east-1.amazonaws.com/philosophizer/uat:latest
               env:
                 - name: SPRING_PROFILES_ACTIVE
-                  value: uat,job
+                  value: job
+                - name: APP_ENV
+                  value: uat
+                - name: APP_MODE
+                  value: job
+                - name: SMTP_HOST
+                  valueFrom:
+                    secretKeyRef:
+                      name: philosophizer-secrets
+                      key: host
+                - name: SMTP_USERNAME
+                  valueFrom:
+                    secretKeyRef:
+                      name: philosophizer-secrets
+                      key: SMTP_USERNAME
+                - name: SMTP_PASSWORD
+                  valueFrom:
+                    secretKeyRef:
+                      name: philosophizer-secrets
+                      key: SMTP_PASSWORD
+                - name: MAIL_JOB_ENABLED
+                  valueFrom:
+                    secretKeyRef:
+                      name: philosophizer-secrets
+                      key: MAIL_JOB_ENABLED
