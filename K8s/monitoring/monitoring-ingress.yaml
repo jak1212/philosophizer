@@ -3,13 +3,10 @@ kind: Ingress
 metadata:
   name: observability-ingress
   namespace: monitoring
-  annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /$1
-    nginx.ingress.kubernetes.io/use-regex: "true"  # optional if you add regex paths later
 spec:
   ingressClassName: nginx
   rules:
-    - host: monitoring.uat.example.com  # swap for PROD as needed
+    - host: monitoring.uat.example.com  # change to PROD host in prod
       http:
         paths:
           - path: /           # base URL goes to Grafana
