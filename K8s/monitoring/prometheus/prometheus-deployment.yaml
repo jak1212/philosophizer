@@ -26,6 +26,8 @@ spec:
           image: prom/prometheus:latest
           args:
             - "--config.file=/etc/prometheus/prometheus.yml"
+            - "--web.external-url=http://ac46dd265079140baa81381497c4c774-206006202.us-east-1.elb.amazonaws.com/prometheus"
+            - "--web.route-prefix=/prometheus"
           ports:
             - containerPort: 9090
           volumeMounts:
