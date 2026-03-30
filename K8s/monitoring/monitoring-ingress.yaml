@@ -3,34 +3,29 @@ kind: Ingress
 metadata:
   name: observability-ingress
   namespace: monitoring
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
 spec:
   ingressClassName: nginx
   rules:
-    - host: grafana.uat.philosophizer-observability.com
-      http:
+    - http:
         paths:
-          - path: /
-            pathType: Prefix
+          - path: /grafana(/|$)(.*)
+            pathType: ImplementationSpecific
             backend:
               service:
                 name: grafana
                 port:
                   number: 3000
-    - host: prometheus.uat.philosophizer-observability.com
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
+          - path: /prometheus(/|$)(.*)
+            pathType: ImplementationSpecific
             backend:
               service:
                 name: prometheus
                 port:
                   number: 9090
-    - host: loki.uat.philosophizer-observability.com
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
+          - path: /loki(/|$)(.*)
+            pathType: ImplementationSpecific
             backend:
               service:
                 name: loki
