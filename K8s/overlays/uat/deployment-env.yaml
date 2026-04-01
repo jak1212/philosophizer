@@ -4,6 +4,10 @@ metadata:
   name: philosophizer
 spec:
   template:
+    metadata:
+      labels:
+        app: philosophizer
+        env: uat
     spec:
       containers:
         - name: philosophizer
