@@ -5,10 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0bfedc9e-63ea-4bfa-b07e-5fa3703e3dd7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/K8s/auth/auth-namespace.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/K8s/auth/authelia/authelia-configmap.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/K8s/auth/authelia/authelia-deployment.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/K8s/auth/authelia/authelia-ingress.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/K8s/auth/authelia/authelia-secrets.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/K8s/auth/authelia/authelia-service.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/K8s/auth/authelia/authelia-users.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/K8s/base/philosophizer-namespace.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/K8s/overlays/uat/protected-ingress.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/K8s/overlays/uat/public-ingress.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/K8s/overlays/uat/deployment-env.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/K8s/overlays/uat/deployment-env.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/K8s/base/CronJob.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/K8s/base/CronJob.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/K8s/base/Service.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/K8s/base/Service.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/K8s/base/deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/K8s/base/deployment.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/K8s/base/kustomization.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/K8s/base/kustomization.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/K8s/monitoring/monitoring-ingress.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/K8s/monitoring/monitoring-ingress.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application-uat.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-uat.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,11 +62,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jk082\Philosophizer\Philosophizer\K8s\auth\authelia" />
       <recent name="C:\Users\jk082\Philosophizer\Philosophizer\K8s\Monitoring\prometheus" />
       <recent name="C:\Users\jk082\Philosophizer\Philosophizer\K8s" />
       <recent name="C:\Users\jk082\Philosophizer\Philosophizer\K8s\base" />
       <recent name="C:\Users\jk082\Philosophizer\Philosophizer\src\main\resources\static\css" />
-      <recent name="C:\Users\jk082\Philosophizer\Philosophizer\src\main\resources\static" />
     </key>
   </component>
   <component name="RunManager" selected="Application.PhilosophizerApp">

@@ -2,3 +2,5 @@ resources:
   - deployment.yaml
   - service.yaml
   - cronjob.yaml
+  - public-ingress.yaml
+  - protected-ingress.yaml

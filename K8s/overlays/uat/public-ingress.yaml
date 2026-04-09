@@ -1,0 +1,28 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: app-public-ingress
+  namespace: philosophizer
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/auth-url: ""
+spec:
+  rules:
+    - host: app.startsmallstarttoday.com
+      http:
+        paths:
+          - path: /signup
+            pathType: Prefix
+            backend:
+              service:
+                name: philosophizer-internal
+                port:
+                  number: 80
+
+          - path: /thank-you
+            pathType: Prefix
+            backend:
+              service:
+                name: philosophizer-internal
+                port:
+                  number: 80

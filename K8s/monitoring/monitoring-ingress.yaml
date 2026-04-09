@@ -5,12 +5,11 @@ metadata:
   namespace: monitoring
   annotations:
     nginx.ingress.kubernetes.io/use-regex: "true"
-    nginx.ingress.kubernetes.io/proxy-redirect-from: "http://ac46dd265079140baa81381497c4c774-206006202.us-east-1.elb.amazonaws.com/"
-    nginx.ingress.kubernetes.io/proxy-redirect-to: "http://ac46dd265079140baa81381497c4c774-206006202.us-east-1.elb.amazonaws.com/grafana/"
 spec:
   ingressClassName: nginx
   rules:
-    - http:
+    - host: monitoring.startsmallstarttoday.com
+      http:
         paths:
           - path: /grafana
             pathType: Prefix

@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: authelia
+  namespace: auth
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: authelia
+  template:
+    metadata:
+      labels:
+        app: authelia
+    spec:
+      containers:
+        - name: authelia
+          image: authelia/authelia:latest
+          ports:
+            - containerPort: 9091
+          env:
+            - name: AUTHELIA_JWT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: authelia-secrets
+                  key: JWT_SECRET
+            - name: AUTHELIA_SESSION_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: authelia-secrets
+                  key: SESSION_SECRET
+          volumeMounts:
+            - name: config
+              mountPath: /config
+      volumes:
+        - name: config
+          projected:
+            sources:
+              - configMap:
+                  name: authelia-config
+              - configMap:
+                  name: authelia-users

@@ -2,6 +2,7 @@ apiVersion: batch/v1
 kind: CronJob
 metadata:
   name: philosophizer-daily-email
+  namespace: philosophizer
 spec:
   schedule: "0 7 * * *" # 7am
   timeZone: "America/New_York"

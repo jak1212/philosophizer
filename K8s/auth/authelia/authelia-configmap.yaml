@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: authelia-config
+  namespace: auth
+data:
+  configuration.yml: |
+    server:
+      host: 0.0.0.0
+      port: 9091
+
+    log:
+      level: debug
+
+    session:
+      name: authelia_session
+      secret: "{{ secret \"AUTHELIA_SESSION_SECRET\" }}"
+      expiration: 1h
+      inactivity: 5m
+      domain: startsmallstarttoday.com
+
+    authentication_backend:
+      file:
+        path: /config/users_database.yml
+
+    access_control:
+      default_policy: deny
+      rules:
+        - domain: "app.startsmallstarttoday.com"
+          policy: one_factor
+
+    storage:
+      local:
+        path: /config/db.sqlite3
+
+    notifier:
+      filesystem:
+        filename: /config/notification.txt
