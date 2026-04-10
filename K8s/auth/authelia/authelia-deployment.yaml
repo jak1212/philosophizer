@@ -37,6 +37,8 @@ spec:
           volumeMounts:
             - name: config
               mountPath: /config
+            - name: authelia-data
+              mountPath: /data
       volumes:
         - name: config
           projected:
@@ -45,3 +47,5 @@ spec:
                   name: authelia-config
               - configMap:
                   name: authelia-users
+        - name: authelia-data
+          emptyDir: {}
