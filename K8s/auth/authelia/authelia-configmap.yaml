@@ -13,11 +13,12 @@ data:
 
     session:
       name: authelia_session
-      secret: "{{ env \"AUTHELIA_SESSION_SECRET\" }}"
+      secret: "{{ env "AUTHELIA_SESSION_SECRET" }}"
       expiration: 1h
       inactivity: 5m
       cookies:
         - domain: startsmallstarttoday.com
+          authelia_url: https://auth.startsmallstarttoday.com
 
     authentication_backend:
       file:
@@ -26,6 +27,12 @@ data:
     access_control:
       default_policy: deny
       rules:
+        - domain: "app.startsmallstarttoday.com"
+          resources:
+            - "^/signup.*$"
+            - "^/thank-you.*$"
+          policy: bypass
+    
         - domain: "app.startsmallstarttoday.com"
           policy: one_factor
 
