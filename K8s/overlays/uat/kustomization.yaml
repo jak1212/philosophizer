@@ -1,5 +1,8 @@
 resources:
   - ../../base
+  - philosophizer-secrets.yaml
+  - protected-ingress.yaml
+  - public-ingress.yaml
 
 patches:
   - path: deployment-env.yaml
@@ -15,3 +18,5 @@ images:
   - name: philosophizer
     newName: 733232591650.dkr.ecr.us-east-1.amazonaws.com/philosophizer/uat
     newTag: latest
+
+namespace: philosophizer
