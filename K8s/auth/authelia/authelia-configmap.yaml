@@ -13,7 +13,7 @@ data:
 
     session:
       name: authelia_session
-      secret: "{{ env "AUTHELIA_SESSION_SECRET" }}"
+      secret: '{{ env "AUTHELIA_SESSION_SECRET" }}'
       expiration: 1h
       inactivity: 5m
       cookies:
