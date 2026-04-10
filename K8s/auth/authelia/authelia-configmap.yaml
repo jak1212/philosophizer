@@ -30,6 +30,7 @@ data:
           policy: one_factor
 
     storage:
+      encryption_key: '{{ env "AUTHELIA_STORAGE_ENCRYPTION_KEY" }}'
       local:
         path: /config/db.sqlite3
 

@@ -29,6 +29,11 @@ spec:
                 secretKeyRef:
                   name: authelia-secrets
                   key: SESSION_SECRET
+            - name: AUTHELIA_STORAGE_ENCRYPTION_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: authelia-secrets
+                  key: STORAGE_ENCRYPTION_KEY
           volumeMounts:
             - name: config
               mountPath: /config
