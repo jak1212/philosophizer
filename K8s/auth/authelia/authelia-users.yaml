@@ -10,3 +10,5 @@ data:
         password: "$argon2id$v=19$m=65536,t=3,p=4$xQqRyBYkerEO4NlOtf93vw$QFZ9HpOpN4ZS+9GNwXXhH1DluovHSs5dOQisGqe6xSc"
         displayname: "Jack"
         email: "jk0827@gmail.com"
+        groups: []
+        disabled: false
