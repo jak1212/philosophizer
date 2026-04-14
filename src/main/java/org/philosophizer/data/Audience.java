@@ -3,6 +3,8 @@ package org.philosophizer.data;
 
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 
 
 @Entity
@@ -17,6 +19,8 @@ public class Audience {
     @Column(name = "last_name", nullable = false, length = 50)
     private String lastName;
     @Column(name = "email", nullable = false, unique = true, length = 50)
+    @Email
+    @NotBlank
     private String email;
     @Column(name = "active", nullable = false)
     private boolean isActive;

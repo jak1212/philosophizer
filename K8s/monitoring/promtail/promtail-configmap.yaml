@@ -24,7 +24,7 @@ data:
               - localhost
             labels:
               job: philosophizer
-              namespace: default
+              namespace: philosophizer
               env: uat
               __path__: /var/log/pods/default_philosophizer*/**/*.log
 

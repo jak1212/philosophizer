@@ -1,6 +1,7 @@
 package org.philosophizer.controllers;
 
 
+import jakarta.validation.Valid;
 import org.philosophizer.data.Audience;
 import org.philosophizer.service.AudienceService;
 import org.slf4j.Logger;
@@ -19,7 +20,7 @@ public class AudienceController {
     private static final Logger logger = LoggerFactory.getLogger(AudienceController.class);
 
     @PostMapping
-    public ResponseEntity<?> createAudience(@RequestBody Audience request) {
+    public ResponseEntity<?> createAudience(@Valid @RequestBody Audience request) {
         try {
             audienceService.saveAudience(request); //what validation is taking place here?
             logger.info("ok user created through signup controller firstName={} lastName={} email = {}", request.getFirstName(), request.getLastName(), request.getEmail());

@@ -35,6 +35,12 @@ data:
     
         - domain: "app.startsmallstarttoday.com"
           policy: one_factor
+    
+        - domain: "monitoring.startsmallstarttoday.com"
+          policy: one_factor
+          subject:
+            - "group:admins"
+    
 
     storage:
       encryption_key: '{{ env "AUTHELIA_STORAGE_ENCRYPTION_KEY" }}'
