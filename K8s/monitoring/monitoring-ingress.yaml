@@ -10,6 +10,10 @@ metadata:
     nginx.ingress.kubernetes.io/auth-response-headers: "Remote-User,Remote-Name,Remote-Groups,Remote-Email"
 spec:
   ingressClassName: nginx
+  tls:
+    - hosts:
+        - monitoring.startsmallstarttoday.com
+      secretName: monitoring-tls
   rules:
     - host: monitoring.startsmallstarttoday.com
       http:

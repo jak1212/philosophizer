@@ -8,6 +8,11 @@ metadata:
     nginx.ingress.kubernetes.io/auth-signin: "https://auth.startsmallstarttoday.com/?rd=$request_uri"
 
 spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - app.startsmallstarttoday.com
+      secretName: philosophizer-tls
   rules:
     - host: app.startsmallstarttoday.com
       http:

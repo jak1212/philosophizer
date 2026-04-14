@@ -6,6 +6,11 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: nginx
 spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - auth.startsmallstarttoday.com
+      secretName: auth-tls
   rules:
     - host: auth.startsmallstarttoday.com
       http:

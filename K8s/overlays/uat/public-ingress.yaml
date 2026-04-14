@@ -7,6 +7,11 @@ metadata:
     kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/auth-url: ""
 spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - app.startsmallstarttoday.com
+      secretName: philosophizer-tls-public
   rules:
     - host: app.startsmallstarttoday.com
       http:
