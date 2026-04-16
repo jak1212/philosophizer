@@ -32,6 +32,11 @@ data:
             - "^/signup.*$"
             - "^/thank-you.*$"
           policy: bypass
+        
+        - domain: "*.startsmallstarttoday.com"
+          resources:
+            - "^/.well-known/acme-challenge.*$"
+          policy: bypass
     
         - domain: "app.startsmallstarttoday.com"
           policy: one_factor
