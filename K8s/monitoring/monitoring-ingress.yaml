@@ -8,6 +8,7 @@ metadata:
     nginx.ingress.kubernetes.io/auth-url: "http://authelia.auth.svc.cluster.local/api/verify"
     nginx.ingress.kubernetes.io/auth-signin: "https://auth.startsmallstarttoday.com?rm=$request_method"
     nginx.ingress.kubernetes.io/auth-response-headers: "Remote-User,Remote-Name,Remote-Groups,Remote-Email"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
 spec:
   ingressClassName: nginx
   tls:
