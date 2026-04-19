@@ -1,31 +1,24 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: app-public-ingress
+  name: app-ingress
   namespace: philosophizer
   annotations:
-    kubernetes.io/ingress.class: nginx
-    nginx.ingress.kubernetes.io/auth-url: ""
+    nginx.ingress.kubernetes.io/auth-url: "http://authelia.auth.svc.cluster.local/api/verify"
+    nginx.ingress.kubernetes.io/auth-signin: "https://auth.startsmallstarttoday.com/?rd=$request_uri"
+    nginx.ingress.kubernetes.io/auth-response-headers: "Remote-User,Remote-Name,Remote-Groups,Remote-Email"
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
 spec:
   ingressClassName: nginx
   tls:
     - hosts:
         - app.startsmallstarttoday.com
-      secretName: philosophizer-tls-public
+      secretName: philosophizer-tls
   rules:
     - host: app.startsmallstarttoday.com
       http:
         paths:
-          - path: /signup
-            pathType: Prefix
-            backend:
-              service:
-                name: philosophizer-internal
-                port:
-                  number: 80
-
-          - path: /thank-you
+          - path: /
             pathType: Prefix
             backend:
               service:

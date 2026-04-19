@@ -1,8 +1,7 @@
 resources:
   - ../../base
   - philosophizer-secrets.yaml
-  - protected-ingress.yaml
-  - public-ingress.yaml
+  - philosophizer-ingress.yaml
 
 patches:
   - path: deployment-env.yaml
