@@ -28,9 +28,23 @@ spec:
           imagePullPolicy: IfNotPresent
           env:
             - name: GF_SERVER_ROOT_URL
-              value: "http://ac46dd265079140baa81381497c4c774-206006202.us-east-1.elb.amazonaws.com/grafana"
+              value: "https://monitoring.startsmallstarttoday.com/grafana"
             - name: GF_SERVER_SERVE_FROM_SUB_PATH
               value: "true"
+            - name: GF_AUTH_DISABLE_LOGIN_FORM
+              value: "true"
+            - name: GF_AUTH_PROXY_ENABLED
+              value: "true"
+            - name: GF_AUTH_PROXY_HEADER_NAME
+              value: "Remote-User"
+            - name: GF_AUTH_PROXY_HEADER_PROPERTY
+              value: "username"
+            - name: GF_AUTH_PROXY_AUTO_SIGN_UP
+              value: "true"
+            - name: GF_USERS_AUTO_ASSIGN_ORG
+              value: "true"
+            - name: GF_USERS_AUTO_ASSIGN_ORG_ROLE
+              value: "Admin"
           volumeMounts:
           - name: grafana-storage
             mountPath: /var/lib/grafana
