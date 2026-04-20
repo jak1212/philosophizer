@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/philosophizer/signup")
+@RequestMapping("/signup")
 public class SignupController {
     private static final Logger log = LoggerFactory.getLogger(SignupController.class);
 
