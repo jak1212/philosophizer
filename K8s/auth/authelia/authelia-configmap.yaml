@@ -31,6 +31,12 @@ data:
           resources:
             - "^/signup.*$"
             - "^/thank-you.*$"
+            - "^/static/.*$"
+            - "^/assets/.*$"
+            - "^/css/.*$"
+            - "^/js/.*$"
+            - "^/images/.*$"
+            - "^/favicon.ico$"
           policy: bypass
         
         - domain: "*.startsmallstarttoday.com"
