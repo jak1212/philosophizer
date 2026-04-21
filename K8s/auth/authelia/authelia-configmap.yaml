@@ -37,6 +37,8 @@ data:
             - "^/js/.*$"
             - "^/images/.*$"
             - "^/favicon.ico$"
+            - "^/public/.*$"
+            - "^/api/audience.*$"
           policy: bypass
         
         - domain: "*.startsmallstarttoday.com"
