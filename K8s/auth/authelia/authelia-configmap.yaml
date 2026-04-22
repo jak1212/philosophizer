@@ -30,7 +30,6 @@ data:
         - domain: "app.startsmallstarttoday.com"
           resources:
             - "^/signup.*$"
-            - "^/thank-you.*$"
             - "^/static/.*$"
             - "^/assets/.*$"
             - "^/css/.*$"
