@@ -20,6 +20,21 @@ spec:
             - containerPort: 8080
           imagePullPolicy: Always
           env:
+            - name: RDS_HOST
+              valueFrom:
+                secretKeyRef:
+                  name: philosophizer-db-secret
+                  key: RDS_HOST
+            - name: RDS_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: philosophizer-db-secret
+                  key: RDS_USERNAME
+            - name: RDS_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: philosophizer-db-secret
+                  key: RDS_PASSWORD
             - name: SMTP_USERNAME
               valueFrom:
                 secretKeyRef:
