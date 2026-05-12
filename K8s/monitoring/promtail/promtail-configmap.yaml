@@ -12,7 +12,7 @@ data:
       grpc_listen_port: 0
 
     positions:
-      filename: /tmp/positions.yaml
+      filename: /tmp/positions/positions.yaml
 
     clients:
       - url: http://loki.monitoring.svc.cluster.local:3100/loki/api/v1/push
@@ -43,13 +43,22 @@ data:
             target_label: container
 
           - action: replace
-            separator: /
             source_labels:
               - __meta_kubernetes_namespace
               - __meta_kubernetes_pod_name
               - __meta_kubernetes_pod_uid
+            separator: _
+            regex: (.+)
+            replacement: /var/log/pods/$1
+            target_label: __path__
+
+          - action: replace
+            source_labels:
+              - __path__
               - __meta_kubernetes_pod_container_name
-            replacement: /var/log/pods/$1_$2_$3/$4/*.log
+            separator: /
+            regex: (.+)
+            replacement: $1/*.log
             target_label: __path__
 
         pipeline_stages:
