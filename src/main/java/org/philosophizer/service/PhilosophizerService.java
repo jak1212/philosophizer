@@ -48,7 +48,8 @@ public class PhilosophizerService {
             }
             log.info("Philosophizer service sent a batch");
         }catch(Exception e){
-            log.error("Exception in sending philosophy exception={}", e.toString());
+            log.error("Exception in sending philosophy", e);
+            throw new RuntimeException("sendPhilosophy failed", e);
         }
     }
 
