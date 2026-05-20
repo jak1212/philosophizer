@@ -16,7 +16,7 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.SimpleMailMessage;
 
 @Component
-@Profile({"prod","uat"})
+@Profile({"prod","uat","job"})
 public class SesMailSender implements MailSender{
     //private final Session session;
     //private MailProperties mailProperties;
