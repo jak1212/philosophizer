@@ -42,7 +42,7 @@ public class PhilosophizerService {
             for (Audience a : audienceList) {
                 String to = a.getEmail();
                 mailService.sendEmail(a,
-                        philosophiesList.get(index).getQuote() + "/n" +
+                        philosophiesList.get(index).getQuote() + "\n\n" +
                                 philosophiesList.get(index).getSaidBy(), subject);
                 log.info("Philosophizer service mail sent to recipient={}", a.getEmail());
             }
