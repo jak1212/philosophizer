@@ -9,6 +9,7 @@ import jakarta.mail.internet.InternetAddress;
 import jakarta.mail.internet.MimeMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Profile;
 import org.springframework.mail.MailException;
 import org.springframework.stereotype.Component;
@@ -21,6 +22,8 @@ public class SesMailSender implements MailSender{
     //private final Session session;
     //private MailProperties mailProperties;
     private final JavaMailSender mailSender;
+    @Value("${mail.from}")
+    private String fromAddress;
 
     private static final Logger log = LoggerFactory.getLogger(SesMailSender.class);
 
@@ -34,6 +37,7 @@ public class SesMailSender implements MailSender{
         try {
             SimpleMailMessage msg = new SimpleMailMessage();
             msg.setTo(to);
+            msg.setFrom(fromAddress);
             msg.setSubject(subject);
             msg.setText(body);
             mailSender.send(msg);

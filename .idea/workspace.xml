@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0bfedc9e-63ea-4bfa-b07e-5fa3703e3dd7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/philosophizer/cronJobs/DailyMailJobRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/philosophizer/cronJobs/DailyMailJobRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application-job.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-job.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
