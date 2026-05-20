@@ -25,7 +25,7 @@ public class DailyMailJobRunner implements CommandLineRunner {
         this.applicationContext = applicationContext;
     }
 
-    @PostConstruct
+
     public void run(String... args) {
         log.info("Starting daily philosophy mail job");
         int exitCode = 0;
