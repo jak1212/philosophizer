@@ -1,6 +1,6 @@
 resources:
   - ../../base
-  - philosophizer-secrets.yaml
+  - philosophizer-external-secret.yaml
   - philosophizer-ingress.yaml
 
 patches:
