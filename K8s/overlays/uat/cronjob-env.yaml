@@ -42,3 +42,18 @@ spec:
                     secretKeyRef:
                       name: philosophizer-secrets
                       key: MAIL_JOB_ENABLED
+                - name: RDS_HOST
+                  valueFrom:
+                    secretKeyRef:
+                      name: philosophizer-db-secret
+                      key: RDS_HOST
+                - name: RDS_PASSWORD
+                  valueFrom:
+                    secretKeyRef:
+                      name: philosophizer-db-secret
+                      key: RDS_PASSWORD
+                - name: RDS_USERNAME
+                  valueFrom:
+                    secretKeyRef:
+                      name: philosophizer-db-secret
+                      key: RDS_USERNAME
